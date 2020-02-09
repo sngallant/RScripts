@@ -57,13 +57,6 @@ rec.perf <- rec.perf %>%
 #convert Cue variable from a character to a factor
 rec.perf$Cue <- as.factor(rec.perf$Cue)
 
-#filtering out excluded participants
-rec.perf <- filter(rec.perf, ID != "A20JFJQZSF42HB", ID != "A27ZE20JZ3VDUP", ID != "A27ZE20JZ3VDUP", 
-                     ID != "A27ZE20JZ3VDUP", ID != "A296WX3QFEK7A0", ID != "A1ESQQT4HBLB52", ID != "A27B4N0RVPJ9I8" , 
-                     ID != "A1KUSWYPDMM4SH", ID != "A1FA6EKJSDLRO8", ID != "A36ADZHZFFDEQA", ID != "A2148LZC82UBIX", 
-                     ID != "A77OIEWWR4UK7", ID != "A37T1MVUL5YIC0", ID != "A14IUHOJEPXFQB", ID != "A37O30WLLHE8QT", 
-                     ID != "A10UOV89EVLDAM", ID != "A1HLG5NN2I16GN", ID != "A1AKTFYEZ493UQ", ID != "AKG7VBOY97HKA")
-
 #summarize the data as a function of age group and cue level...compute mean, sd, and se
 rec.perf.summary <- rec.perf %>%
   group_by(AgeGrp, Cue) %>%
